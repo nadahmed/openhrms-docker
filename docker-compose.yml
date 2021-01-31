@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  opnehrms:
+    build: ./openhrms
+    ports:
+      - "8069:8069"
+    volumes:
+      - ./openhrms/logs:/var/log/openhrms
