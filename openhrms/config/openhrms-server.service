@@ -1,0 +1,10 @@
+[Unit]
+Description=OpenHRMS
+Documentation=https://www.openhrms.com
+[Service]
+# Ubuntu/Debian convention:
+Type=simple
+User=openhrms
+ExecStart=/opt/openhrms/odoo-bin -c /etc/openhrms-server.conf
+[Install]
+WantedBy=default.target

@@ -7,3 +7,18 @@ services:
       - "8069:8069"
     volumes:
       - ./openhrms/logs:/var/log/openhrms
+      - ./openhrms/config/openhrms-server.conf:/etc/openhrms-server.conf
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+    volumes:
+      - postgresdb:/var/lib/postgresql/data/
+      # - ./postgres/.pgpass:/.pgpass
+      - ./postgres/docker-entrypoint-initdb.d/init-user-db.sh:/docker-entrypoint-initdb.d/init-user-db.sh
+volumes:
+  postgresdb:
