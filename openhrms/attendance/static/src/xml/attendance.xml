@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+	
+	<!-- Attendance Button Template -->
+	<t t-name="attendance.attendance_button_main_template">
+		 <li class="attendance_btn_li">
+            <div class="sign_in_out_btn_div_wrap">
+                <t t-if="widget.employee">
+                    <t t-if="widget.employee.attendance_state=='checked_out'">
+                        <i class="fa fa-sign-in e_sign_in_out_icon"/>
+                    </t>
+                    <t t-if="widget.employee.attendance_state=='checked_in'">
+                        <i class="fa fa-sign-out e_sign_in_out_icon"/>
+                    </t>
+                </t>
+            </div>
+        </li>
+	</t>
+	
+</templates>
