@@ -22,8 +22,8 @@ RUN pip3 install --upgrade pip
 RUN pip3 install -r /opt/openhrms/doc/requirements.txt
 RUN pip3 install -r /opt/openhrms/requirements.txt
 RUN pip3 install pandas
-# RUN pip install odoo11-addon-web-responsive
-RUN apt-get install -y curl
+# RUN pip install odoo12-addon-web-responsive
+# RUN apt-get install -y curl
 # RUN curl -sL https://deb.nodesource.com/setup_6.x | bash
 
 RUN npm install -g less@3.0.4 less-plugin-clean-css
@@ -48,6 +48,8 @@ RUN chown openhrms:root /var/log/openhrms
 RUN cp /opt/openhrms/debian/odoo.conf /etc/openhrms-server.conf
 RUN chown openhrms: /etc/openhrms-server.conf \
   && chmod 640 /etc/openhrms-server.conf
+
+
 
 # RUN systemctl enable openhrms-server
 
