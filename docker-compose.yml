@@ -9,7 +9,7 @@ services:
       - ./openhrms/logs:/var/log/openhrms
       - ./openhrms/config/openhrms-server.conf:/etc/openhrms-server.conf
       - ./openhrms/web_responsive-11.0.2.0.3/web_responsive:/opt/openhrms/addons/web_responsive
-      - .openhrms/attendance:/opt/openhrms/addons/attendance
+      - ./openhrms/hr_biometric_machine_zk_demo:/opt/openhrms/addons/hr_biometric_machine_zk_demo
     depends_on:
       - postgres
 
